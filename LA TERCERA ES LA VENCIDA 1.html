@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clínica Gineco-Pediátrica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdfdfd;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #f9e4f2;
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+    header h1 {
+      color: #a64d79;
+      margin-bottom: 10px;
+    }
+    header img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .container {
+      width: 95%;
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 0;
+    }
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    h2 {
+      color: #993366;
+      text-align: center;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    .accordion-item {
+      background: #f7f0f7;
+      border-radius: 10px;
+      padding: 15px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .accordion-content {
+      display: none;
+      padding: 10px;
+      background: #fceaf2;
+      border-radius: 8px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, select, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #a64d79;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #993366;
+    }
+    .confirmation-message {
+      display: none;
+      color: green;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clínica Gineco-Pediátrica</h1>
+    <img src="https://github.com/Per-Arredondo/ejercicio_clinica.v2/blob/main/portada.png?raw=true" alt="Imagen de portada" />
+  </header>
+  <div class="container">
+    <section>
+      <h2>¿Quiénes somos?</h2>
+      <p>Clínica enfocada en salud ginecológica, obstétrica y pediátrica. Brindamos atención con calidez, ética profesional y trato humano, especialmente a mujeres, infancias y familias.</p>
+    </section>
+    <section>
+      <h2>Misión</h2>
+      <p>Brindar atención médica especializada, accesible y con enfoque integral a mujeres, gestantes e infancias.</p>
+    </section>
+    <section>
+      <h2>Visión</h2>
+      <p>Ser un referente en salud femenina e infantil, por nuestra excelencia médica, cercanía y compromiso con la comunidad.</p>
+    </section>
+    <section>
+      <h2>Valores</h2>
+      <ul>
+        <li>Ética profesional</li>
+        <li>Empatía</li>
+        <li>Diversidad</li>
+        <li>Honestidad</li>
+        <li>Responsabilidad</li>
+        <li>Enfoque de género y niñez</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Especialidades Médicas</h2>
+      <div class="accordion-item">👩‍⚕️ Ginecología
+        <div class="accordion-content">Salud reproductiva, planificación familiar, anticoncepción, estudios Papanicolaou, chequeos ginecológicos.</div>
+      </div>
+      <div class="accordion-item">🧐 Obstetricia
+        <div class="accordion-content">Control prenatal, ultrasonidos, educación perinatal, atención en embarazo de bajo y alto riesgo.</div>
+      </div>
+      <div class="accordion-item">👶 Pediatría
+        <div class="accordion-content">Control del desarrollo infantil, vacunas, revisiones, prevención de enfermedades y orientación para madres/padres.</div>
+      </div>
+      <div class="accordion-item">🩺 Medicina General
+        <div class="accordion-content">Valoración inicial, seguimiento a condiciones generales de salud, chequeos básicos y canalización a especialidades.</div>
+      </div>
+    </section>
+    <section>
+      <h2>Agendar cita</h2>
+      <form id="appointmentForm">
+        <input name="Nombre completo" placeholder="Nombre completo" required />
+        <input name="Teléfono" placeholder="Teléfono" required />
+        <input name="Correo electrónico" type="email" placeholder="Correo electrónico" required />
+        <select name="Sexo" required>
+          <option value="">Selecciona tu sexo</option>
+          <option>Femenino</option>
+          <option>Masculino</option>
+          <option>Otro</option>
+        </select>
+        <select name="Especialidad" required>
+          <option value="">Selecciona una especialidad</option>
+          <option>Ginecología</option>
+          <option>Obstetricia</option>
+          <option>Pediatría</option>
+          <option>Medicina General</option>
+        </select>
+        <input type="date" name="Fecha" required />
+        <input type="time" name="Hora" required />
+        <textarea name="Comentarios adicionales" placeholder="Comentarios adicionales (opcional)"></textarea>
+        <button type="submit">Agendar cita</button>
+      </form>
+      <div class="confirmation-message" id="confirmationMessage">
+        👍 Gracias, tu cita ha sido agendada. ⏳ Redirigiendo al inicio... 🎉 Te contactaremos pronto.
+      </div>
+    </section>
+  </div>
+  <footer>
+    <p>&copy; 2025 Clínica Gineco-Pediátrica. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const content = item.querySelector('.accordion-content');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    const form = document.getElementById('appointmentForm');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const data = new URLSearchParams();
+      for (const pair of formData.entries()) {
+        data.append(pair[0], pair[1]);
+      }
+
+      fetch('https://script.google.com/macros/s/AKfycbxHbrhTGIgK92nQf8mYK7WmAjlGM57vbyUweuGQHoF5oFRjY4Cfn6x4rqNHl0TDsMeQ/exec', {
+        method: 'POST',
+        body: data
+      })
+        .then(response => response.text())
+        .then(() => {
+          document.getElementById('confirmationMessage').style.display = 'block';
+          setTimeout(() => {
+            document.getElementById('confirmationMessage').style.display = 'none';
+            form.reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }, 5000);
+        })
+        .catch(() => alert('Hubo un error al enviar la cita.'));
+    });
+  </script>
+</body>
+</html>
